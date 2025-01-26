@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+</head>
+
+<body>
+
+    <header id="header" class="header">
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="#aboutme" class="nav-link">About Me</a></li>
+                <li><a href="#location" class="nav-link">Location</a></li>
+                <li><a href="#movie" class="nav-link">My Favorite Movie</a></li>
+                <li><a href="#skills" class="nav-link">My Skills</a></li>
+                <li><a href="#library" class="nav-link">My Digital Library</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <section id="aboutme" class="about-me">
+            <h1>About Me</h1>
+            <p>I am a student currently in my 6th semester of <b>Software Engineering</b> at Fast NUCES. My
+                interests extend beyond academics, particularly to football, where I enjoy both playing and following
+                the sport. I'm always eager to explore new ideas and experiences, making the most of my time during this
+                exciting phase of my education.</p>
+            <img class="profile-img" width="200" height="250" src="ibii.jpg" alt="Ibraheem">
+        </section>
+
+        <section id="location" class="location">
+            <h1>Current location</h1>
+            <p id="points"></p>
+        </section>
+
+        <section id="movie" class="favorite-movie">
+            <h1>My Favorite Movie</h1>
+            <h3>Harry Potter and The Philosopher's Stone Trailer</h3>
+            <video class="movie-video" width="640" height="360" controls loop autoplay muted>
+                <source src="hp.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section id="skills" class="skills">
+            <h1>My Skills</h1>
+            <h3>Academic Skills</h3>
+            <ul class="academic-skills">
+                <li>Dynamic Programming</li>
+                <li>Web Development (Backend)</li>
+                <li>Mathematics (Calculus, Linear Algebra)</li>
+                <li>Research Methodology</li>
+            </ul>
+
+            <h3>Non-Academic Skills</h3>
+            <ul class="non-academic-skills">
+                <li>Team Collaboration</li>
+                <li>Time Management</li>
+                <li>Football Strategy & Analysis</li>
+            </ul>
+        </section>
+
+        <section id="library" class="digital-library">
+            <h1>My Digital Audio Library</h1>
+            <h3>Track 1: Ye Duriyaan - Young Stunners</h3>
+            <audio class="audio-track" src="ty.mp3" controls>
+                Your browser does not support the audio element.
+            </audio><br>
+            <h3>Track 2: SomeWhere Only We Know - Keane</h3>
+            <audio class="audio-track" src="swonwk.mp3" controls>
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <section id="contact" class="contact-form">
+            <h2>Say Something About Me</h2>
+            <form action="" id="contact-form"><br>
+                <label id="namelabel" for="name">Name</label><br>
+                <input id="name-input" class="form-input" type="text" placeholder="Enter your name" required><br>
+                <label for="email">Email</label><br>
+                <input type="email" name="email" id="email-input" class="form-input" placeholder="Enter you email"
+                    required><br>
+                <label for="contactNo">Contact No.</label><br>
+                <input type="tel" id="contact-no-input" class="form-input" placeholder="Enter Your contact no."
+                    required><br>
+                <label for="message">Message</label><br>
+                <textarea id="message-input" class="form-input" placeholder="Write message" rows="4" cols="50"
+                    required></textarea><br>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </section>
+
+    </main>
+    <footer id="footer" class="footer">
+        <p>&copy; All rights reserved.</p>
+    </footer>
+
+    <script>
+        const status = document.querySelector("#points");
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                status.innerText = `Location Coordinates: Latitude ${latitude}, Longitude ${longitude}`;
+            },
+        );
+    </script>
+    
+</body>
+
+</html>
